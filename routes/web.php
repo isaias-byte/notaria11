@@ -23,3 +23,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::resource('abogado', AbogadoController::class);
+
+Route::get('inicio', function () {
+    return view('inicio');
+});
