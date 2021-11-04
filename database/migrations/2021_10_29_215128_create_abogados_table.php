@@ -22,7 +22,7 @@ class CreateAbogadosTable extends Migration
             $table->string('telefono_celular', 40)->nullable(true);
             $table->string('telefono_particular', 40)->nullable(true);
             $table->string('codigo');
-            
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }

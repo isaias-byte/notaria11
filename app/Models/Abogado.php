@@ -8,5 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Abogado extends Model
 {
     use HasFactory;
-    protected $fillable = ['nombre', 'apellido_paterno', 'apellido_materno', 'email', 'telefono_celular', 'telefono_particular', 'codigo'];
+    protected $fillable = ['nombre', 'apellido_paterno', 'apellido_materno', 'email', 'telefono_celular', 'telefono_particular', 'codigo', 'user_id'];
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }
