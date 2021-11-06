@@ -57,7 +57,7 @@ class AbogadoController extends Controller
             'telefono_particular' =>['max:30'],
             'codigo' => ['required', 'string', 'min:2', 'max:50', 'unique:App\Models\Abogado,codigo'],
         ]);
-        //* Alteramos a propósito un poco el request, dando la oportunidad que sean vaciós los campos de apellido materno, y los teléfonos, además, asignamos el valor a user_id (foreign key)
+        //* Alteramos a propósito un poco el request, dando la oportunidad que sean vacíos los campos de apellido materno, y los teléfonos, además, asignamos el valor a user_id (foreign key)
         $request->merge([
             'apellido_materno' => $request->apellido_materno ?? '',
             'telefono_celular' => $request->telefono_celular ?? '',
