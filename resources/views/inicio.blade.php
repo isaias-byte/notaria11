@@ -257,7 +257,7 @@
                                     <div class="col-lg-6 mb-5">
                                         <br>
                                         <br>
-                                        <img src="{{ asset('assets/images/abogado-about-us2.jpg') }}" alt="Image" class="img-fluid">                        
+                                        <img src="{{ asset('assets/images/abogado-about-us2.jpg') }}" alt="Image" class="img-fluid">
                                     </div>
                                     <div class="col-lg-5 ml-auto section-title">
                                         <!-- <span class="sub-title mb-2 d-block">Acquaint Us</span> -->
@@ -285,98 +285,155 @@
                                 <span class="sub-title mb-2 d-block">Director de la firma de T y E Abogados S.C.</span>
                                 <h2 class="title text-primary mb-3 text-danger">CURRICULUM DEL LICENCIADO FELIPE TORRES PACHECO NOTARIO PUBLICO NUMERO 11 DE GUADALAJARA, JALISCO</h2>
                             </div>
-                        </div>
+                        
                         <div class="row mb-5">
                             <div class="col-lg-6 order-1 order-lg-2 mb-4 mb-lg-0">
                                 <img src="{{ asset('assets/images/jefe-notaria.jpg') }}" alt="LICENCIADO FELIPE TORRES PACHECO" class="img-fluid">
                             </div>
-                        <div class="col-lg-5 h-100 jm-sticky-top mr-auto order-2 order-lg-1">
-                            <ul>
-                                <h4>
-                                    <li>Estudios de Postgrado en Contratos, Bornemouth, Inglaterra.</li>
-                                    <li>Diplomado en Derecho Notarial por la Universidad Nacional Autónoma de México.</li>
-                                    <li>Diplomado en Derecho Contractual, Universidad Panamericana, sede Guadalajara.</li>
-                                    <li>Diplomado en Derecho Constitucional, Universidad de Guadalajara.</li>
-                                    <li>Diplomado en Negocios Internacionales, Universidad de Guadalajara.</li>
-                                    <li>Diplomado en Derecho Canónico, Universidad Pontifica de México.</li>
-                                    <li>Cursos de Derecho Fiscal, Empresarial y Civil en la Universidad Panamericana, sede</li>
-                                    <li>Guadalajara y en la Asociación Nacional de Abogados de Empresa (ANADE).</li>
-                                    <li>Profesor de Licenciatura y Postgrado en la Universidad Panamericana, sede Guadalajara.</li>                            
-                                </h4>
-                            </ul>
+                            <div class="col-lg-5 h-100 jm-sticky-top mr-auto order-2 order-lg-1">
+                                <ul>
+                                    <h4>
+                                        <li>Estudios de Postgrado en Contratos, Bornemouth, Inglaterra.</li>
+                                        <li>Diplomado en Derecho Notarial por la Universidad Nacional Autónoma de México.</li>
+                                        <li>Diplomado en Derecho Contractual, Universidad Panamericana, sede Guadalajara.</li>
+                                        <li>Diplomado en Derecho Constitucional, Universidad de Guadalajara.</li>
+                                        <li>Diplomado en Negocios Internacionales, Universidad de Guadalajara.</li>
+                                        <li>Diplomado en Derecho Canónico, Universidad Pontifica de México.</li>
+                                        <li>Cursos de Derecho Fiscal, Empresarial y Civil en la Universidad Panamericana, sede</li>
+                                        <li>Guadalajara y en la Asociación Nacional de Abogados de Empresa (ANADE).</li>
+                                        <li>Profesor de Licenciatura y Postgrado en la Universidad Panamericana, sede Guadalajara.</li>
+                                    </h4>
+                                </ul>
+                            </div>
+                        </div>
+                            <br>
+                            <div class="site-section" id="what-we-do-section">
+                                <div class="container">
+                                    <div class="row mb-5">
+                                        <div class="col-lg-6 section-title">
+                                            <!-- <span class="sub-title mb-2 d-block">Meet The Team</span> -->
+                                            <h2 class="title text-danger">Miembros de la firma</h2>
+                                        </div>
+                                    </div>
+                                    <div class="row no-gutters">
+                                        <div class="col-lg-6 mb-5 person">
+                                            <img src="{{ asset('assets/images/jefe-notaria.jpg') }}" alt="Licenciado Felipe Torres Pacheco" class="img-fluid mb-5">
+
+                                            <div class="row">
+                                                <div class="col-lg-10 ml-auto">
+                                                    <div class="pr-lg-5">
+                                                        <h3>Licenciado Felipe Torres Pacheco</h3>
+                                                        <!-- <span class="mb-4 d-block">CEO, Co-Founder</span>
+                                                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                                                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+                                                        <p class="d-flex align-items-center">
+                                                            <span class="mr-3 text-black">Follow me:</span>
+                                                            <a href="#" class="twitter pr-2 pt-2 pb-2 pl-0"><span class="icon-twitter"></span></a>
+                                                            <a href="#" class="facebook p-2"><span class="icon-facebook"></span></a>
+                                                            <a href="#" class="dribbble p-2"><span class="icon-dribbble"></span></a>
+                                                            <a href="#" class="instagram p-2"><span class="icon-instagram"></span></a>
+                                                            <a href="#" class="linkedin p-2"><span class="icon-linkedin"></span></a>
+                                                        </p> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 person">
+                                            <img src="{{ asset('assets/images/miembro-firma-mariam.jpg') }}" alt="Licenciado Diego Torres Soulé" class="img-fluid mb-5">
+                                            <div class="row">
+                                                <div class="col-lg-10 ml-auto">
+                                                    <div class="pr-lg-5">
+                                                        <h3>Licenciado Diego Torres Soulé</h3>
+                                                        <!-- <span class="mb-4 d-block">CTO, Co-Founder</span>
+                                                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+                                                        <p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.</p>
+                                                        <p class="d-flex align-items-center">
+                                                            <span class="mr-3 text-black">Follow me:</span>
+                                                            <a href="#" class="twitter pr-2 pt-2 pb-2 pl-0"><span class="icon-twitter"></span></a>
+                                                            <a href="#" class="github p-2"><span class="icon-github"></span></a>
+                                                            <a href="#" class="dribbble p-2"><span class="icon-dribbble"></span></a>
+                                                            <a href="#" class="instagram p-2"><span class="icon-instagram"></span></a>
+                                                            <a href="#" class="linkedin p-2"><span class="icon-linkedin"></span></a>
+                                                        </p> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- .col-12 -->
+                </div> <!-- .row -->
+            </div> <!-- .container-fluid -->
+            <div class="modal fade modal-notif modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="defaultModalLabel">Notifications</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="list-group list-group-flush my-n3">
+                                <div class="list-group-item bg-transparent">
+                                    <div class="row align-items-center">
+                                        <div class="col-auto">
+                                            <span class="fe fe-box fe-24"></span>
+                                        </div>
+                                        <div class="col">
+                                            <small><strong>Package has uploaded successfull</strong></small>
+                                            <div class="my-0 text-muted small">Package is zipped and uploaded</div>
+                                            <small class="badge badge-pill badge-light text-muted">1m ago</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-group-item bg-transparent">
+                                    <div class="row align-items-center">
+                                        <div class="col-auto">
+                                            <span class="fe fe-download fe-24"></span>
+                                        </div>
+                                        <div class="col">
+                                            <small><strong>Widgets are updated successfull</strong></small>
+                                            <div class="my-0 text-muted small">Just create new layout Index, form, table</div>
+                                            <small class="badge badge-pill badge-light text-muted">2m ago</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-group-item bg-transparent">
+                                    <div class="row align-items-center">
+                                        <div class="col-auto">
+                                            <span class="fe fe-inbox fe-24"></span>
+                                        </div>
+                                        <div class="col">
+                                            <small><strong>Notifications have been sent</strong></small>
+                                            <div class="my-0 text-muted small">Fusce dapibus, tellus ac cursus commodo</div>
+                                            <small class="badge badge-pill badge-light text-muted">30m ago</small>
+                                        </div>
+                                    </div> <!-- / .row -->
+                                </div>
+                                <div class="list-group-item bg-transparent">
+                                    <div class="row align-items-center">
+                                        <div class="col-auto">
+                                            <span class="fe fe-link fe-24"></span>
+                                        </div>
+                                        <div class="col">
+                                            <small><strong>Link was attached to menu</strong></small>
+                                            <div class="my-0 text-muted small">New layout has been attached to the menu</div>
+                                            <small class="badge badge-pill badge-light text-muted">1h ago</small>
+                                        </div>
+                                    </div>
+                                </div> <!-- / .row -->
+                            </div> <!-- / .list-group -->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Clear All</button>
                         </div>
                     </div>
-                </div> <!-- .col-12 -->
-            </div> <!-- .row -->
-    </div> <!-- .container-fluid -->
-    <div class="modal fade modal-notif modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="defaultModalLabel">Notifications</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="list-group list-group-flush my-n3">
-                        <div class="list-group-item bg-transparent">
-                            <div class="row align-items-center">
-                                <div class="col-auto">
-                                    <span class="fe fe-box fe-24"></span>
-                                </div>
-                                <div class="col">
-                                    <small><strong>Package has uploaded successfull</strong></small>
-                                    <div class="my-0 text-muted small">Package is zipped and uploaded</div>
-                                    <small class="badge badge-pill badge-light text-muted">1m ago</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list-group-item bg-transparent">
-                            <div class="row align-items-center">
-                                <div class="col-auto">
-                                    <span class="fe fe-download fe-24"></span>
-                                </div>
-                                <div class="col">
-                                    <small><strong>Widgets are updated successfull</strong></small>
-                                    <div class="my-0 text-muted small">Just create new layout Index, form, table</div>
-                                    <small class="badge badge-pill badge-light text-muted">2m ago</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list-group-item bg-transparent">
-                            <div class="row align-items-center">
-                                <div class="col-auto">
-                                    <span class="fe fe-inbox fe-24"></span>
-                                </div>
-                                <div class="col">
-                                    <small><strong>Notifications have been sent</strong></small>
-                                    <div class="my-0 text-muted small">Fusce dapibus, tellus ac cursus commodo</div>
-                                    <small class="badge badge-pill badge-light text-muted">30m ago</small>
-                                </div>
-                            </div> <!-- / .row -->
-                        </div>
-                        <div class="list-group-item bg-transparent">
-                            <div class="row align-items-center">
-                                <div class="col-auto">
-                                    <span class="fe fe-link fe-24"></span>
-                                </div>
-                                <div class="col">
-                                    <small><strong>Link was attached to menu</strong></small>
-                                    <div class="my-0 text-muted small">New layout has been attached to the menu</div>
-                                    <small class="badge badge-pill badge-light text-muted">1h ago</small>
-                                </div>
-                            </div>
-                        </div> <!-- / .row -->
-                    </div> <!-- / .list-group -->
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Clear All</button>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="modal fade modal-shortcut modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
+            <!-- <div class="modal fade modal-shortcut modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -431,8 +488,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    </main> <!-- main -->
+    </div> -->
+        </main> <!-- main -->
     </div> <!-- .wrapper -->
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/popper.min.js') }}"></script>
