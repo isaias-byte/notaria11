@@ -78,22 +78,31 @@
                 <!-- nav bar -->
                 <div class="w-100 mb-4 d-flex">
                     <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="/">
-                        <svg version="1.1" id="logo" class="navbar-brand-img brand-sm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" xml:space="preserve">
+                        <!-- <svg version="1.1" id="logo" class="navbar-brand-img brand-sm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" xml:space="preserve">
                             <g>
                                 <polygon class="st0" points="78,105 15,105 24,87 87,87 	" />
                                 <polygon class="st0" points="96,69 33,69 42,51 105,51 	" />
                                 <polygon class="st0" points="78,33 15,33 24,15 87,15 	" />
                             </g>
-                        </svg>
+                        </svg> -->
+                        <img src="{{ asset('assets/images/logo.png') }}" alt="" class="navbar-brand-img brand-sm" id="logo">
                     </a>
                 </div>
-                <ul class="navbar-nav flex-fill w-100 mb-2">
+                <div class="navbar-nav flex-fill w-100 mb-2">
+                    <a href="#inicio" class="nav-link">
+                        <i class="fe fe-home fe-16"></i>
+                        <span class="ml-3 item-text"></span><span class="sr-only"></span>
+                        Inicio
+
+                    </a>
+                </div>
+                <!-- <ul class="navbar-nav flex-fill w-100 mb-2">
                     <li class="nav-item dropdown">
-                        <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+                        <a href="#inicio" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                             <i class="fe fe-home fe-16"></i>
-                            <span class="ml-3 item-text">Dashboard</span><span class="sr-only">(current)</span>
+                            <span class="ml-3 item-text">Inicio</span><span class="sr-only">(current)</span>
                         </a>
-                        <ul class="collapse list-unstyled pl-4 w-100" id="dashboard">
+                        <ul class="collapse list-unstyled pl-4 w-100" id="inicio">
                             <li class="nav-item active">
                                 <a class="nav-link pl-3" href="./index.html"><span class="ml-1 item-text">Default</span></a>
                             </li>
@@ -111,81 +120,38 @@
                             </li>
                         </ul>
                     </li>
-                </ul>
+                </ul> -->
                 <p class="text-muted nav-heading mt-4 mb-1">
-                    <span>Components</span>
+                    <span>Notaría 11 y 108</span>
                 </p>
                 <ul class="navbar-nav flex-fill w-100 mb-2">
                     <li class="nav-item dropdown">
-                        <a href="#ui-elements" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
-                            <i class="fe fe-box fe-16"></i>
-                            <span class="ml-3 item-text">UI elements</span>
+                        <a href="#sobre-nosotros" class="nav-link">
+                            <!-- <i class="fe fe-box fe-16"></i> -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                            </svg>
+                            <!-- <img src="{{ asset('assets/images/sobre-nosotros.png') }}"> -->
+                            <span class="ml-3 item-text">Sobre Nosotros</span>
                         </a>
-                        <ul class="collapse list-unstyled pl-4 w-100" id="ui-elements">
-                            <li class="nav-item">
-                                <a class="nav-link pl-3" href="./ui-color.html"><span class="ml-1 item-text">Colors</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pl-3" href="./ui-typograpy.html"><span class="ml-1 item-text">Typograpy</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pl-3" href="./ui-icons.html"><span class="ml-1 item-text">Icons</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pl-3" href="./ui-buttons.html"><span class="ml-1 item-text">Buttons</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pl-3" href="./ui-notification.html"><span class="ml-1 item-text">Notifications</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pl-3" href="./ui-modals.html"><span class="ml-1 item-text">Modals</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pl-3" href="./ui-tabs-accordion.html"><span class="ml-1 item-text">Tabs & Accordion</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pl-3" href="./ui-progress.html"><span class="ml-1 item-text">Progress</span></a>
-                            </li>
-                        </ul>
                     </li>
                     <li class="nav-item w-100">
-                        <a class="nav-link" href="widgets.html">
-                            <i class="fe fe-layers fe-16"></i>
-                            <span class="ml-3 item-text">Widgets</span>
-                            <span class="badge badge-pill badge-primary">New</span>
+                        <a class="nav-link" href="#director-firma">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                            </svg>
+                            <span class="ml-3 item-text">Director de la firma</span>
+                            <!-- <span class="badge badge-pill badge-primary">New</span> -->
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="#forms" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
-                            <i class="fe fe-credit-card fe-16"></i>
-                            <span class="ml-3 item-text">Forms</span>
-                        </a>
-                        <ul class="collapse list-unstyled pl-4 w-100" id="forms">
-                            <li class="nav-item">
-                                <a class="nav-link pl-3" href="./form_elements.html"><span class="ml-1 item-text">Basic Elements</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pl-3" href="./form_advanced.html"><span class="ml-1 item-text">Advanced Elements</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pl-3" href="./form_validation.html"><span class="ml-1 item-text">Validation</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pl-3" href="./form_wizard.html"><span class="ml-1 item-text">Wizard</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pl-3" href="./form_layouts.html"><span class="ml-1 item-text">Layouts</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pl-3" href="./form_upload.html"><span class="ml-1 item-text">File upload</span></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#tables" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
-                            <i class="fe fe-grid fe-16"></i>
-                            <span class="ml-3 item-text">Tables</span>
+                        <a href="#miembros-firma" class="nav-link">
+                            <!-- <i class="fe fe-grid fe-16"></i> -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark" viewBox="0 0 16 16">
+                                <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z" />
+                            </svg>
+                            <span class="ml-3 item-text">Miembros de la firma</span>
                         </a>
                         <ul class="collapse list-unstyled pl-4 w-100" id="tables">
                             <li class="nav-item">
@@ -199,7 +165,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                         <a href="#charts" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                             <i class="fe fe-pie-chart fe-16"></i>
                             <span class="ml-3 item-text">Charts</span>
@@ -218,7 +184,7 @@
                                 <a class="nav-link pl-3" href="./datamaps.html"><span class="ml-1 item-text">Datamaps</span></a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                 </ul>
             </nav>
         </aside>
@@ -226,7 +192,7 @@
             <div class="container-fluid">
                 <div class="row justify-content-center">
                     <div class="col-12">
-                        <h1 class="page-title">Notaría 11 y 108</h1>
+                        <h1 class="page-title" id="inicio">Notaría 11 y 108</h1>
                         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
@@ -251,7 +217,7 @@
                         <br>
                         <br>
                         <br>
-                        <div id="about-section">
+                        <div id="sobre-nosotros">
                             <div class="container">
                                 <div class="row align-items-center">
                                     <div class="col-lg-6 mb-5">
@@ -280,34 +246,34 @@
                             </div>
                         </div>
                         <br>
-                        <div id="information-notario">
+                        <div id="director-firma">
                             <div class="col-md-7 section-title text-center mx-auto">
                                 <span class="sub-title mb-2 d-block">Director de la firma de T y E Abogados S.C.</span>
                                 <h2 class="title text-primary mb-3 text-danger">CURRICULUM DEL LICENCIADO FELIPE TORRES PACHECO NOTARIO PUBLICO NUMERO 11 DE GUADALAJARA, JALISCO</h2>
                             </div>
-                        
-                        <div class="row mb-5">
-                            <div class="col-lg-6 order-1 order-lg-2 mb-4 mb-lg-0">
-                                <img src="{{ asset('assets/images/jefe-notaria.jpg') }}" alt="LICENCIADO FELIPE TORRES PACHECO" class="img-fluid">
+
+                            <div class="row mb-5">
+                                <div class="col-lg-6 order-1 order-lg-2 mb-4 mb-lg-0">
+                                    <img src="{{ asset('assets/images/jefe-notaria.jpg') }}" alt="LICENCIADO FELIPE TORRES PACHECO" class="img-fluid">
+                                </div>
+                                <div class="col-lg-5 h-100 jm-sticky-top mr-auto order-2 order-lg-1">
+                                    <ul>
+                                        <h4>
+                                            <li>Estudios de Postgrado en Contratos, Bornemouth, Inglaterra.</li>
+                                            <li>Diplomado en Derecho Notarial por la Universidad Nacional Autónoma de México.</li>
+                                            <li>Diplomado en Derecho Contractual, Universidad Panamericana, sede Guadalajara.</li>
+                                            <li>Diplomado en Derecho Constitucional, Universidad de Guadalajara.</li>
+                                            <li>Diplomado en Negocios Internacionales, Universidad de Guadalajara.</li>
+                                            <li>Diplomado en Derecho Canónico, Universidad Pontifica de México.</li>
+                                            <li>Cursos de Derecho Fiscal, Empresarial y Civil en la Universidad Panamericana, sede</li>
+                                            <li>Guadalajara y en la Asociación Nacional de Abogados de Empresa (ANADE).</li>
+                                            <li>Profesor de Licenciatura y Postgrado en la Universidad Panamericana, sede Guadalajara.</li>
+                                        </h4>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="col-lg-5 h-100 jm-sticky-top mr-auto order-2 order-lg-1">
-                                <ul>
-                                    <h4>
-                                        <li>Estudios de Postgrado en Contratos, Bornemouth, Inglaterra.</li>
-                                        <li>Diplomado en Derecho Notarial por la Universidad Nacional Autónoma de México.</li>
-                                        <li>Diplomado en Derecho Contractual, Universidad Panamericana, sede Guadalajara.</li>
-                                        <li>Diplomado en Derecho Constitucional, Universidad de Guadalajara.</li>
-                                        <li>Diplomado en Negocios Internacionales, Universidad de Guadalajara.</li>
-                                        <li>Diplomado en Derecho Canónico, Universidad Pontifica de México.</li>
-                                        <li>Cursos de Derecho Fiscal, Empresarial y Civil en la Universidad Panamericana, sede</li>
-                                        <li>Guadalajara y en la Asociación Nacional de Abogados de Empresa (ANADE).</li>
-                                        <li>Profesor de Licenciatura y Postgrado en la Universidad Panamericana, sede Guadalajara.</li>
-                                    </h4>
-                                </ul>
-                            </div>
-                        </div>
                             <br>
-                            <div class="site-section" id="what-we-do-section">
+                            <div class="site-section" id="miembros-firma">
                                 <div class="container">
                                     <div class="row mb-5">
                                         <div class="col-lg-6 section-title">
