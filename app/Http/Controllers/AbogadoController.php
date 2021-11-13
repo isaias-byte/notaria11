@@ -139,9 +139,21 @@ class AbogadoController extends Controller
         return redirect()->route('abogado.index');
     }
 
+    //* Añadimos una función específica para la relación de uno a muchos
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Abogado  $abogado
+     * @return \Illuminate\Http\Response
+     */
+
     public function agregarServicios(Request $request, Abogado $abogado) {
         // dd($request->all(), $abogado);
-        $abogado->servicios()->attach($request->servicio_id);
+        $request->validate([
+            'servicio_id' => ['required'],
+        ]);
+        $abogado->servicios()->sync($request->servicio_id);
 
         return redirect()->route('abogado.show', $abogado);
     }

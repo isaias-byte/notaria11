@@ -61,7 +61,8 @@
                 </li> -->
                 <div class="mt-2">
                     <li class="nav-item">
-                        <a href="{{ route('login') }}" class="nav-link">
+                        <a href="{{ route('login') }}" class="nav-link btn-outline-danger">
+                        
                             <span class="">
                                 Iniciar Sesión
                             </span>
@@ -204,6 +205,7 @@
                                 <div class="carousel-item">
                                     <img class="d-block w-100" src="{{ asset('assets/images/notaria11-imagen3.jpeg') }}" alt="Notaria11 y 108 Imagen 3">
                                 </div>
+                                
                             </div>
                             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -223,7 +225,7 @@
                                     <div class="col-lg-6 mb-5">
                                         <br>
                                         <br>
-                                        <img src="{{ asset('assets/images/abogado-about-us2.jpg') }}" alt="Image" class="img-fluid">
+                                        <img src="{{ asset('assets/images/notaria11-imagen5.jpeg') }}" alt="Image" class="img-fluid">
                                     </div>
                                     <div class="col-lg-5 ml-auto section-title">
                                         <!-- <span class="sub-title mb-2 d-block">Acquaint Us</span> -->

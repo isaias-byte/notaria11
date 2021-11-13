@@ -48,15 +48,18 @@
                     @csrf 
                     <div class="form-group">
                         <label for="servicio_id">Nombre de los Servicios</label>
-                        <select id="servicio_id" name="servicio_id" class="form-control" multiple=[]>
+                        <select id="servicio_id" name="servicio_id[]" class="form-control" multiple="">
                             @foreach ($servicios as $servicio)
-                                <option value="{{ $servicio->id }}">{{ $servicio->nombre }}</option>
+                                <option value="{{ $servicio->id }}" {{ array_search($servicio->id, $abogado->servicios->pluck('id')->toArray()) !== false ? 'selected' : ''}}>{{ $servicio->nombre }}</option>
                             @endforeach
                         </select>
+                        @error('servicio_id')
+                            <div class="text-danger"> {{ $message }} </div>
+                        @enderror
                     </div>
                     <!-- <input type="hidden" name="servicio_id" value="{{ $servicio->id }}"> -->
                     
-                    <button type="submit" class="btn btn-primary">Agregar</button>
+                    <button type="submit" class="btn btn-primary">Actualizar Servicios</button>
                 </form>
             </div>
         </div>
@@ -65,7 +68,11 @@
                 <strong class="card-title">Servicios Seleccionados</strong>
             </div>
             <div class="card-body">
-                
+                <ul>
+                    @foreach ($abogado->servicios as $servicio)
+                        <li>{{ $servicio->nombre }}</li>
+                    @endforeach
+                </ul>
             </div>
         </div>
     </div>
