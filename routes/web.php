@@ -22,7 +22,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
+Route::post('abogado/{abogado}/servicios', [AbogadoController::class, 'agregarServicios'])->name('abogado.servicio');
+
 Route::resource('abogado', AbogadoController::class);
+
 
 // Route::get('inicio', function () {
 //     return view('inicio');

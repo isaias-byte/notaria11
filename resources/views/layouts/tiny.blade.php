@@ -19,11 +19,14 @@
     <link rel="stylesheet" href="{{ asset('css/jquery.steps.css') }}">
     <link rel="stylesheet" href="{{ asset('css/jquery.timepicker.css') }}">
     <link rel="stylesheet" href="{{ asset('css/quill.snow.css') }}">
+
     <!-- Date Range Picker CSS -->
     <link rel="stylesheet" href="{{ asset('css/daterangepicker.css') }}">
     <!-- App CSS -->
+
     <link rel="stylesheet" href="{{ asset('css/app-light.css') }}" id="lightTheme">
     <link rel="stylesheet" href="{{ asset('css/app-dark.css') }}" id="darkTheme" disabled>
+    
 </head>
 
 <body class="vertical  light  ">
@@ -479,9 +482,11 @@
     <script src="{{ asset('js/jquery.stickOnScroll.js') }}"></script>
     <script src="{{ asset('js/tinycolor-min.js') }}"></script>
     <script src="{{ asset('js/config.js') }}"></script>
+    <script src="{{ asset('js/select2.min.js') }}"></script>
     <script src="{{ asset('js/jquery.dataTables.min.js')}}"></script>
     <script src="{{ asset('js/dataTables.bootstrap4.min.js') }}"></script>
     <script src="{{ asset('js/apps.js') }}"></script>
+    
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
     <script src="{{ asset('js/date.js') }}"></script>

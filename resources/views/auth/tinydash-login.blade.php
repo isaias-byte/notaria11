@@ -39,11 +39,17 @@
                 <h1 class="h6 mb-3">Sign in</h1>
                 <div class="form-group">
                     <label for="email" class="sr-only">Email address</label>
-                    <input type="email" id="email" name="email" class="form-control form-control-lg" placeholder="Email address" value="{{ old('email') }}" required autofocus>
+                    <input type="email" id="email" name="email" class="form-control form-control-lg @error('email') is-invalid @enderror" placeholder="Email address" value="{{ old('email') }}" required autofocus>
+                    @error('email')
+                        <div class="text-danger"> {{ $message }} </div>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label for="inputPassword" class="sr-only">Password</label>
-                    <input type="password" id="password" name="password" class="form-control form-control-lg" placeholder="Password" required>
+                    <input type="password" id="password" name="password" class="form-control form-control-lg  @error('password') is-invalid @enderror" placeholder="Password" required>
+                    @error('password')
+                        <div class="text-danger"> {{ $message }} </div>
+                    @enderror
                 </div>
                 <div class="checkbox mb-3">
                     <label id="remember_me">

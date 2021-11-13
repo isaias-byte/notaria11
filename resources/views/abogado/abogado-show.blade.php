@@ -23,13 +23,49 @@
                     <li>Email: {{ $abogado->email }}</li>
                     <li>Telefono Celular: {{ $abogado->telefono_celular }}</li>
                     <li>Telefono Particular: {{ $abogado->telefono_particular }}</li>
-                    <li>Codigo: {{ $abogado->codigo  }}</li>
+                    <li>Código: {{ $abogado->codigo  }}</li>
                 </ul>
             </div>
             <div class="col">
                 <p class="small mb-0 text-muted">Notaría 11</p>
                 <p class="small mb-0 text-muted">Avenida Libertad Número 1828. Colonia Americana</p>
                 <p class="small mb-0 text-muted">Guadalajara, Jalisco, México. C.P. 44160</p>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+<div class="container-fluid">
+    <div class="card-deck">
+        <div class="card shadow mb-4">
+            <div class="card-header">
+                <strong class="card-title">Servicios</strong>
+            </div>
+            <div class="card-body">
+                <form action="{{ route('abogado.servicio', $abogado) }}" method="POST">
+                    @csrf 
+                    <div class="form-group">
+                        <label for="servicio_id">Nombre de los Servicios</label>
+                        <select id="servicio_id" name="servicio_id" class="form-control" multiple=[]>
+                            @foreach ($servicios as $servicio)
+                                <option value="{{ $servicio->id }}">{{ $servicio->nombre }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <!-- <input type="hidden" name="servicio_id" value="{{ $servicio->id }}"> -->
+                    
+                    <button type="submit" class="btn btn-primary">Agregar</button>
+                </form>
+            </div>
+        </div>
+        <div class="card shadow mb-4">
+            <div class="card-header">
+                <strong class="card-title">Servicios Seleccionados</strong>
+            </div>
+            <div class="card-body">
+                
             </div>
         </div>
     </div>

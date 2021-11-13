@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Abogado;
+use App\Models\Servicio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
@@ -78,7 +79,8 @@ class AbogadoController extends Controller
      */
     public function show(Abogado $abogado)
     {
-        return view('abogado.abogado-show', compact('abogado'));
+        $servicios = Servicio::get();
+        return view('abogado.abogado-show', compact('abogado', 'servicios'));
     }
 
     /**
@@ -135,5 +137,12 @@ class AbogadoController extends Controller
         //* Con el método delete eliminamos de la base de datos el registro
         $abogado->delete();
         return redirect()->route('abogado.index');
+    }
+
+    public function agregarServicios(Request $request, Abogado $abogado) {
+        // dd($request->all(), $abogado);
+        $abogado->servicios()->attach($request->servicio_id);
+
+        return redirect()->route('abogado.show', $abogado);
     }
 }
