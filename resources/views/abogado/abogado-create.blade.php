@@ -2,10 +2,18 @@
 @section('contenido')
 @if (isset($abogado))
     <h1 class="page-title">Editar abogado</h1>
+    <br>
+    <div class="mb-2">
+        <a href="{{ route('abogado.index') }}" class="btn mb-2 btn-outline-danger">Cancelar</a>
+    </div>
     <form action="{{ route('abogado.update', $abogado) }}" method="POST">
     @method('PATCH')
 @else
     <h1 class="page-title">Registro de abogado</h1>
+    <br>
+    <div class="mb-2">
+        <a href="{{ route('abogado.index') }}" class="btn mb-2 btn-outline-danger">Cancelar</a>
+    </div>
     <form action="{{ route('abogado.store') }}" method="POST">
         @endif
 
@@ -60,7 +68,7 @@
                 <div class="text-danger"> {{ $message }} </div>
             @enderror
         </div>
-        <button type="submit" class="btn mb-2 btn-secondary">
+        <button type="submit" class="btn mb-2 btn-primary">
             <span class="fe fe-download fe-16"><span></span>
                 Guardar
             </span>

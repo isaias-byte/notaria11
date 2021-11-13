@@ -60,9 +60,9 @@
                                                             <label class="custom-control-label"></label>
                                                         </div>
                                                     </td> -->
-                                                    
+
                                                     <td>
-                                                        <a href="{{ route('abogado.show', $abogado->id) }}">
+                                                        <a href="{{ route('abogado.show', $abogado->id) }}" class="text-danger">
                                                             {{ $abogado->nombre }}
                                                         </a>
                                                     </td>
@@ -77,20 +77,20 @@
                                                         </button>
                                                         <div class="dropdown-menu dropdown-menu-right">
                                                             <a class="dropdown-item" href="{{ route('abogado.edit', $abogado) }}">Editar</a>
-                                                            <form action="{{ route('abogado.destroy', $abogado) }}" method="POST">
-                                                                @csrf
-                                                                @method('DELETE')
-                                                                <input type="submit" value="Eliminar" class="dropdown-item">
-                                                                </input>
-                                                            </form>
+
+                                                            <button type="button" class="dropdown-item" data-toggle="modal" data-target="#eliminar-modal" name="{{ $abogado }}" id="{{ $abogado }}">Eliminar</button>
+
+
                                                             <!-- <a class="dropdown-item" href="#">Assign</a> -->
                                                         </div>
-                                                    </td>                                                
+
+                                                    </td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>
                                         </table>
                                     </div>
+
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-12 col-md-5">
@@ -106,10 +106,37 @@
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
                 </div> <!-- simple table -->
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="eliminar-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Eliminar registro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ¿Estás seguro que deseas eliminar el registro?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <form action="{{ route('abogado.destroy', $abogado) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" value="Eliminar" class="btn btn-primary">
+                        </input>
+                    </form>
+                    <!-- <button type="button" class="btn btn-primary"></button> -->
+                </div>
             </div>
         </div>
     </div>
