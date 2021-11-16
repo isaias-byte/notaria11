@@ -1,5 +1,6 @@
 @extends('layouts.tiny')
 @section('contenido')
+
 @if (isset($abogado))
     <h1 class="page-title">Editar abogado</h1>
     <br>
@@ -7,6 +8,8 @@
         <a href="{{ route('abogado.index') }}" class="btn mb-2 btn-outline-danger">Cancelar</a>
     </div>
     <form action="{{ route('abogado.update', $abogado) }}" method="POST">
+        
+    
     @method('PATCH')
 @else
     <h1 class="page-title">Registro de abogado</h1>
@@ -49,14 +52,14 @@
         </div>
         <div class="form-group mb-3">
             <label for="telefono_celular">Teléono Celular</label>
-            <input type="number" id="telefono_celular" name="telefono_celular" class="form-control @error('telefono_celular') is-invalid @enderror" value="{{ old('telefono_celular') ?? $abogado->telefono_celular ?? '' }}">
+            <input type="text" id="telefono_celular" name="telefono_celular" class="form-control @error('telefono_celular') is-invalid @enderror" value="{{ old('telefono_celular') ?? $abogado->telefono_celular ?? '' }}">
             @error('telefono_celular')
                 <div class="text-danger"> {{ $message }} </div>
             @enderror
         </div>
         <div class="form-group mb-3">
             <label for="telefono_particular">Teléfono Particular</label>
-            <input type="number" id="telefono_particular" name="telefono_particular" class="form-control @error('telefono_particular') is-invalid @enderror" value="{{ old('telefono_particular') ?? $abogado->telefono_particular ?? '' }}">
+            <input type="text" id="telefono_particular" name="telefono_particular" class="form-control @error('telefono_particular') is-invalid @enderror" value="{{ old('telefono_particular') ?? $abogado->telefono_particular ?? '' }}">
             @error('telefono_particular')
                 <div class="text-danger"> {{ $message }} </div>
             @enderror

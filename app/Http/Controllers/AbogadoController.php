@@ -23,7 +23,8 @@ class AbogadoController extends Controller
     public function index()
     {
         //* obtenemos todos los abogados, y los pasamos a la vista index
-        $abogados = Abogado::all();
+        // $abogados = Abogado::all();
+        $abogados = Abogado::with('servicios')->get();
         //! Tenemos la relación de uno a muchos (user(1)->abogados(n)) trabajando correctamente, con la siguiente línea obtenemos los abogados solamente del usuario que está registrado, no obstante, en nuestro caso siempre mostramos todos los abogados de la notaría que están en la BD
         // $abogados = Auth::user()->abogados()->get();
         return view('abogado.abogado-index', compact('abogados'));
@@ -67,6 +68,7 @@ class AbogadoController extends Controller
         ]);
         //* Guardamos en la base de datos y retornamos al index
         Abogado::create($request->all());
+        
         return redirect()->route('abogado.index');
 
     }
@@ -122,7 +124,7 @@ class AbogadoController extends Controller
         ]);
         //* Actualizamos en la base de datos, a excepción del token y method, y retornamos al index
         Abogado::where('id', $abogado->id)->update($request->except('_token', '_method'));
-
+        
         return redirect()->route('abogado.show', $abogado);
     }
 
