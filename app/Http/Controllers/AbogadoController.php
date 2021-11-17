@@ -159,4 +159,6 @@ class AbogadoController extends Controller
 
         return redirect()->route('abogado.show', $abogado);
     }
+
+    
 }

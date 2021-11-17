@@ -19,4 +19,20 @@ class Abogado extends Model
     public function servicios() {
         return $this->belongsToMany(Servicio::class);
     }
+
+    public function getNombreCompletoAttribute() {
+        return $this->nombre . ' ' . $this->apellido_paterno . ' ' . $this->apellido_materno;
+    }
+
+    public function setNombreAttribute($nombre) {
+        return $this->attributes['nombre'] = ucwords(strtolower($nombre));
+    }
+
+    public function setApellidoPaternoAttribute($apellido_paterno) {
+        return $this->attributes['apellido_paterno'] = ucwords(strtolower($apellido_paterno));
+    }
+
+    public function setApellidoMaternoAttribute($apellido_materno) {
+        return $this->attributes['apellido_materno'] = ucwords(strtolower($apellido_materno));
+    }
 }
