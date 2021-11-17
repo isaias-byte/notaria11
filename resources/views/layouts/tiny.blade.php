@@ -43,12 +43,12 @@
                     </a>
                 </li>
                 <!-- @include('shortcuts') -->
-                <li class="nav-item nav-notif">
+                <!-- <li class="nav-item nav-notif">
                     <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-notif">
                         <span class="fe fe-bell fe-16"></span>
                         <span class="dot dot-md bg-success"></span>
                     </a>
-                </li>
+                </li> -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-muted pr-0" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="avatar avatar-sm mt-2">
@@ -56,9 +56,13 @@
                         </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Profile</a>
-                        <a class="dropdown-item" href="#">Settings</a>
-                        <a class="dropdown-item" href="#">Activities</a>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <a class="dropdown-item" href="#" onclick="event.preventDefault(); 
+                            this.closest('form').submit();">Cerrar Sesión</a>
+                        <!-- <a class="dropdown-item" href="#">Settings</a>
+                        <a class="dropdown-item" href="#">Activities</a> -->
+                        </form>
                     </div>
                 </li>
             </ul>
@@ -95,11 +99,11 @@
                 </p>
                 <ul class="navbar-nav flex-fill w-100 mb-2">
                     <li class="nav-item dropdown">
-                        <a href="#ui-elements" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+                        <a href="{{ route('abogado.index') }}" class="nav-link">
                             <i class="fe fe-box fe-16"></i>
-                            <span class="ml-3 item-text">UI elements</span>
+                            <span class="ml-3 item-text">Abogados</span>
                         </a>
-                        <ul class="collapse list-unstyled pl-4 w-100" id="ui-elements">
+                        <!-- <ul class="collapse list-unstyled pl-4 w-100" id="ui-elements">
                             <li class="nav-item">
                                 <a class="nav-link pl-3" href="./ui-color.html"><span class="ml-1 item-text">Colors</span>
                                 </a>
@@ -125,9 +129,9 @@
                             <li class="nav-item">
                                 <a class="nav-link pl-3" href="./ui-progress.html"><span class="ml-1 item-text">Progress</span></a>
                             </li>
-                        </ul>
+                        </ul> -->
                     </li>
-                    <li class="nav-item w-100">
+                    <!-- <li class="nav-item w-100">
                         <a class="nav-link" href="widgets.html">
                             <i class="fe fe-layers fe-16"></i>
                             <span class="ml-3 item-text">Widgets</span>
@@ -196,7 +200,7 @@
                                 <a class="nav-link pl-3" href="./datamaps.html"><span class="ml-1 item-text">Datamaps</span></a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                 </ul>
                 <!-- <p class="text-muted nav-heading mt-4 mb-1">
                     <span>Apps</span>
