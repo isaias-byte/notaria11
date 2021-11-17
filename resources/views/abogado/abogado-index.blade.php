@@ -117,6 +117,7 @@
     </div>
     <!-- Modal -->
     <div class="modal fade" id="eliminar-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        @if (isset($abogado))
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -140,6 +141,7 @@
                 </div>
             </div>
         </div>
+        @endif
     </div>
     
 

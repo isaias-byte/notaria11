@@ -24,6 +24,7 @@ class CreateAbogadosTable extends Migration
             $table->string('codigo');
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
