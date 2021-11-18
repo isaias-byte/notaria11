@@ -57,15 +57,25 @@ class AbogadoController extends Controller
             'email' =>['required', 'max:70', 'email:rfc'],
             'telefono_celular' => ['max:30'],
             'telefono_particular' =>['max:30'],
+            'imagen' => ['required'],
             'codigo' => ['required', 'string', 'min:2', 'max:50', 'unique:App\Models\Abogado,codigo'],
         ]);
+
+        $ruta = $request->imagen->store('images');
+        $mime = $request->imagen->getClientMimeType();
+        $nombreOriginal = $request->imagen->getClientOriginalName();
         //* Alteramos a propósito un poco el request, dando la oportunidad que sean vacíos los campos de apellido materno, y los teléfonos, además, asignamos el valor a user_id (foreign key)
         $request->merge([
             'apellido_materno' => $request->apellido_materno ?? '',
             'telefono_celular' => $request->telefono_celular ?? '',
             'telefono_particular' => $request->telefono_particular ?? '',
+            'imagen' => $nombreOriginal,
+            'imagen_ruta' => $ruta,
+            'mime' => $mime,
             'user_id' => Auth::id(),
         ]);
+
+
         //* Guardamos en la base de datos y retornamos al index
         Abogado::create($request->all());
         
@@ -160,5 +170,4 @@ class AbogadoController extends Controller
         return redirect()->route('abogado.show', $abogado);
     }
 
-    
 }

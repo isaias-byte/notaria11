@@ -490,7 +490,12 @@
     <script src="{{ asset('js/jquery.dataTables.min.js')}}"></script>
     <script src="{{ asset('js/dataTables.bootstrap4.min.js') }}"></script>
     <script src="{{ asset('js/apps.js') }}"></script>
-    
+    <script>
+            $('input[type="file"]').change(function(e){
+            var fileName = e.target.files[0].name;
+            $(e.target).siblings('.custom-file-label').text(fileName);
+    });
+    </script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
     <script src="{{ asset('js/date.js') }}"></script>
