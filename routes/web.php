@@ -36,6 +36,8 @@ Route::get('/', function () {
     return view('inicio');
 });
 
+Route::get('descargar-imagen/{abogado}', [AbogadoController::class, 'descargarImagen'])->name('descargar');
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

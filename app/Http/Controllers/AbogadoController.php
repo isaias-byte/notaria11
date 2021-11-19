@@ -7,6 +7,8 @@ use App\Models\Servicio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Storage;
+
 
 class AbogadoController extends Controller
 {
@@ -57,24 +59,24 @@ class AbogadoController extends Controller
             'email' =>['required', 'max:70', 'email:rfc'],
             'telefono_celular' => ['max:30'],
             'telefono_particular' =>['max:30'],
-            'imagen' => ['required'],
+            'archivo' => ['required'],
             'codigo' => ['required', 'string', 'min:2', 'max:50', 'unique:App\Models\Abogado,codigo'],
         ]);
 
-        $ruta = $request->imagen->store('images');
-        $mime = $request->imagen->getClientMimeType();
-        $nombreOriginal = $request->imagen->getClientOriginalName();
+        $ruta = $request->archivo->store('imagenes');
+        $mime = $request->archivo->getClientMimeType();
+        $nombreOriginal = $request->archivo->getClientOriginalName();
         //* Alteramos a propósito un poco el request, dando la oportunidad que sean vacíos los campos de apellido materno, y los teléfonos, además, asignamos el valor a user_id (foreign key)
         $request->merge([
             'apellido_materno' => $request->apellido_materno ?? '',
             'telefono_celular' => $request->telefono_celular ?? '',
             'telefono_particular' => $request->telefono_particular ?? '',
-            'imagen' => $nombreOriginal,
+            'imagen_original' => $nombreOriginal,
             'imagen_ruta' => $ruta,
             'mime' => $mime,
             'user_id' => Auth::id(),
         ]);
-
+        // Storage::copy(base_path('/storage/app/'.$ruta) ,base_path('/public/fotografias'));
 
         //* Guardamos en la base de datos y retornamos al index
         Abogado::create($request->all());
@@ -92,7 +94,8 @@ class AbogadoController extends Controller
     public function show(Abogado $abogado)
     {
         $servicios = Servicio::get();
-        return view('abogado.abogado-show', compact('abogado', 'servicios'));
+        $imagen = Storage::getVisibility($abogado->imagen_ruta);
+        return view('abogado.abogado-show', compact('abogado', 'servicios', 'imagen'));
     }
 
     /**
@@ -168,6 +171,11 @@ class AbogadoController extends Controller
         $abogado->servicios()->sync($request->servicio_id);
 
         return redirect()->route('abogado.show', $abogado);
+    }
+
+    public function descargarImagen(Abogado $abogado) {
+        $headers = ['Content-Type' => $abogado->mime];
+        return Storage::download($abogado->imagen_ruta, $abogado->imagen_original, $headers);
     }
 
 }

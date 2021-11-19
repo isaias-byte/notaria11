@@ -10,7 +10,7 @@ class Abogado extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    protected $fillable = ['nombre', 'apellido_paterno', 'apellido_materno', 'email', 'telefono_celular', 'telefono_particular', 'codigo', 'imagen', 'imagen_ruta', 'mime', 'user_id'];
+    protected $fillable = ['nombre', 'apellido_paterno', 'apellido_materno', 'email', 'telefono_celular', 'telefono_particular', 'codigo', 'imagen_original', 'imagen_ruta', 'mime', 'user_id'];
 
     public function user() {
         return $this->belongsTo(User::class);

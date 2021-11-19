@@ -72,12 +72,14 @@
             @enderror
         </div>
         <div class="form-group mb-3">
-            <label for="imagen">Fotografía del abogado</label>
+            <!-- <label for="archivo"></label> -->
+            <label for="archivo">Fotografía del abogado</label>
             <div class="custom-file">
-                <input type="file" class="custom-file-input @error('imagen') is-invalid @enderror" id="imagen" name="imagen">
+                <input type="file" class="custom-file-input @error('archivo') is-invalid @enderror" id="archivo" name="archivo">
                 <label class="custom-file-label" for="imagen2">Escoge un archivo</label>
             </div>
-            @error('imagen')
+            <!-- <input type="file" name="archivo"> -->
+            @error('archivo')
             <div class="text-danger"> {{ $message }} </div>
             @enderror
         </div>
