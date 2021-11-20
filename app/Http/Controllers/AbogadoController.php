@@ -6,6 +6,7 @@ use App\Models\Abogado;
 use App\Models\Servicio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Storage;
 
@@ -50,6 +51,7 @@ class AbogadoController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->archivo);
         // dd($request->all());
         //* Validamos el request de la siguiente forma
         $request->validate([
@@ -63,9 +65,10 @@ class AbogadoController extends Controller
             'codigo' => ['required', 'string', 'min:2', 'max:50', 'unique:App\Models\Abogado,codigo'],
         ]);
 
-        $ruta = $request->archivo->store('imagenes');
+        $path_destino = 'storage/fotografias';
         $mime = $request->archivo->getClientMimeType();
         $nombreOriginal = $request->archivo->getClientOriginalName();
+        $ruta = $request->archivo->storeAs($path_destino, $nombreOriginal);
         //* Alteramos a propósito un poco el request, dando la oportunidad que sean vacíos los campos de apellido materno, y los teléfonos, además, asignamos el valor a user_id (foreign key)
         $request->merge([
             'apellido_materno' => $request->apellido_materno ?? '',
@@ -94,8 +97,7 @@ class AbogadoController extends Controller
     public function show(Abogado $abogado)
     {
         $servicios = Servicio::get();
-        $imagen = Storage::getVisibility($abogado->imagen_ruta);
-        return view('abogado.abogado-show', compact('abogado', 'servicios', 'imagen'));
+        return view('abogado.abogado-show', compact('abogado', 'servicios'));
     }
 
     /**
@@ -118,6 +120,7 @@ class AbogadoController extends Controller
      */
     public function update(Request $request, Abogado $abogado)
     {
+        // dd($request->archivo);
         //* Validamos el request de la siguiente forma
         $request->validate([
             'nombre' => ['required', 'string', 'min:2', 'max:40'],
@@ -126,17 +129,39 @@ class AbogadoController extends Controller
             'email' =>['required', 'max:70', 'email:rfc'],
             'telefono_celular' => ['max:30'],
             'telefono_particular' =>['max:30'],
+            'archivo' => ['required'],
             'codigo' => ['required', 'string', 'min:2', 'max:50', Rule::unique('abogados')->ignore($abogado->id)],
         ]);
+        
+        
+        
+        // if ($request->hasFile('archivo')) {
+        //     $path_destino = 'storage/fotografias';
+        //     $pathDestino_aux = 'storage/fotografias/'.$abogado->imagen_original;
+        //     if (File::exists($pathDestino_aux)) {
+        //         File::delete($pathDestino_aux);
+        //     }
+        //     $mime = $request->archivo->getClientMimeType();
+        //     $nombreOriginal = $request->archivo->getClientOriginalName();
+        //     $ruta = $request->archivo->storeAs($path_destino, $nombreOriginal);
+        $path_destino = 'storage/fotografias';
+        $mime = $request->archivo->getClientMimeType();
+        $nombreOriginal = $request->archivo->getClientOriginalName();
+        $ruta = $request->archivo->move($path_destino, $nombreOriginal);
+        
 
-        //* Alteramos a propósito un poco el request, dando la oportunidad que sean vaciós los campos de apellido materno, y los teléfonos, además, asignamos el valor a user_id (foreign key)
-        $request->merge([
-            'apellido_materno' => $request->apellido_materno ?? '',
-            'telefono_celular' => $request->telefono_celular ?? '',
-            'telefono_particular' => $request->telefono_particular ?? '',
-        ]);
+            //* Alteramos a propósito un poco el request, dando la oportunidad que sean vaciós los campos de apellido materno, y los teléfonos, además, asignamos el valor a user_id (foreign key)
+            $request->merge([
+                'apellido_materno' => $request->apellido_materno ?? '',
+                'telefono_celular' => $request->telefono_celular ?? '',
+                'telefono_particular' => $request->telefono_particular ?? '',
+                'imagen_original' => $nombreOriginal,
+                'imagen_ruta' => $ruta,
+                'mime' => $mime,
+            ]);
+            Abogado::where('id', $abogado->id)->update($request->except('_token', '_method', 'archivo'));
+            
         //* Actualizamos en la base de datos, a excepción del token y method, y retornamos al index
-        Abogado::where('id', $abogado->id)->update($request->except('_token', '_method'));
         
         return redirect()->route('abogado.show', $abogado);
     }
@@ -172,6 +197,11 @@ class AbogadoController extends Controller
 
         return redirect()->route('abogado.show', $abogado);
     }
+
+    // public function descargarImagen(Abogado $abogado) {
+    //     $headers = ['Content-Type' => $abogado->mime];
+    //     return Storage::download($abogado->imagen_ruta, $abogado->imagen_original, $headers);
+    // }
 
     public function descargarImagen(Abogado $abogado) {
         $headers = ['Content-Type' => $abogado->mime];

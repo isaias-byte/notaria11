@@ -4,8 +4,7 @@
 <div class="row mt-5 align-items-center">
     <div class="col-md-3 text-center mb-5">
         <div class="avatar avatar-xl">
-            
-            <img src="{{ asset($abogado->imagen_ruta) }}" alt="lawyer" class="avatar-img rounded-circle">
+            <img src="{{ asset('storage/fotografias/'.$abogado->imagen_original) }}" alt="lawyer" class="avatar-img rounded-circle">
         </div>
         <br>
         <a href="{{ route('descargar', $abogado) }}" class="text-info">Descargar Fotografía</a>

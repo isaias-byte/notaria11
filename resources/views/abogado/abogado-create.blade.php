@@ -7,7 +7,7 @@
 <div class="mb-2">
     <a href="{{ route('abogado.index') }}" class="btn mb-2 btn-outline-danger">Cancelar</a>
 </div>
-<form action="{{ route('abogado.update', $abogado) }}" method="POST">
+<form action="{{ route('abogado.update', $abogado) }}" method="POST" enctype="multipart/form-data">
 
 
     @method('PATCH')
