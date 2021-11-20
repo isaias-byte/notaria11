@@ -38,6 +38,8 @@ Route::get('/', function () {
 
 Route::get('descargar-imagen/{abogado}', [AbogadoController::class, 'descargarImagen'])->name('descargar');
 
+Route::get('servicios', [AbogadoController::class, 'obtenerServicios'])->name('servicios');
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

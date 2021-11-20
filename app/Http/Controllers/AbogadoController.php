@@ -179,7 +179,7 @@ class AbogadoController extends Controller
         return redirect()->route('abogado.index');
     }
 
-    //* Añadimos una función específica para la relación de uno a muchos
+    //* Añadimos una función específica para la relación de muchos a muchos
     /**
      * Update the specified resource in storage.
      *
@@ -202,10 +202,16 @@ class AbogadoController extends Controller
     //     $headers = ['Content-Type' => $abogado->mime];
     //     return Storage::download($abogado->imagen_ruta, $abogado->imagen_original, $headers);
     // }
-
+    //* Usamos la siguiente función para descargar la Imagen del abogado, pasando en la función estáticca download la ruta, el nombre, y el mime (headers)
     public function descargarImagen(Abogado $abogado) {
         $headers = ['Content-Type' => $abogado->mime];
         return Storage::download($abogado->imagen_ruta, $abogado->imagen_original, $headers);
     }
 
+
+    public function obtenerServicios() {
+        $servicios = Servicio::all();
+        $cont = 0;
+        return view('servicio.servicio', compact('servicios', 'cont'));
+    }
 }
