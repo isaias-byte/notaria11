@@ -46,6 +46,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::post('abogado/{abogado}/servicios', [AbogadoController::class, 'agregarServicios'])->name('abogado.servicio');
 
+Route::get('cliente/duda', [AbogadoController::class, 'dudaCliente'])->name('duda');
+Route::get('cliente/duda/enviar-correo', [AbogadoController::class, 'enviarDuda'])->name('duda-correo');
+
 Route::resource('abogado', AbogadoController::class)->middleware('verified');
 
 

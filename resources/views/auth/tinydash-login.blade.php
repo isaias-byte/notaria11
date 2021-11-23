@@ -80,6 +80,7 @@
                     <a href="{{ route('password.request') }}">{{ __('Forgot your password?') }}</a>
                     
                 </div>
+
                 
                 <button class="btn btn-lg btn-primary btn-block" type="submit">{{ __('Log in') }}</button>
                 <a href="{{ route('register') }}">

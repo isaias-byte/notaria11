@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ClienteDuda;
 use App\Models\Abogado;
 use App\Models\Servicio;
 use Illuminate\Http\Request;
@@ -9,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Mail;
 
 
 class AbogadoController extends Controller
@@ -213,5 +215,14 @@ class AbogadoController extends Controller
         $servicios = Servicio::all();
         $cont = 0;
         return view('servicio.servicio', compact('servicios', 'cont'));
+    }
+
+    public function dudaCliente() {
+        return view('cliente.duda');
+    }
+
+    public function enviarDuda() {
+        Mail::to('cliente@test.com')->send(new ClienteDuda);
+        return redirect()->back();
     }
 }

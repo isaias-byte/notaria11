@@ -43,7 +43,7 @@
 <body class="light">
     <div class="wrapper vh-100">
         <div class="row align-items-center h-100">
-        
+            
             <form action="{{ route('register') }}" class="col-lg-6 col-md-8 col-10 mx-auto" method="POST">
                 @csrf
                 <div class="mx-auto text-center my-4">
@@ -76,6 +76,19 @@
                             <div class="text-danger"> {{ $message }} </div>
                         @enderror
                 </div>
+
+                <div class="form-group">
+                    <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="tipo"  value="Cliente">
+                            <label class="form-check-label" for="inlineRadio2">Cliente</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="tipo"  value="Gerente">
+                            <label class="form-check-label" for="inlineRadio2">Gerente</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
                 <hr class="my-4">
                 <div class="row mb-4">
                     <div class="col-md-6">

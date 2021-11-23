@@ -90,6 +90,7 @@
             <a href="#" class="btn collapseSidebar toggle-btn d-lg-none text-muted ml-2 mt-3" data-toggle="toggle">
                 <i class="fe fe-x"><span class="sr-only"></span></i>
             </a>
+            @auth
             <nav class="vertnav navbar navbar-light">
                 <!-- nav bar -->
                 <div class="w-100 mb-4 d-flex">
@@ -106,23 +107,57 @@
                 </div>
                 <ul class="navbar-nav flex-fill w-100 mb-2">
                     <li class="nav-item dropdown">
-                        <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
-                            <i class="fe fe-home fe-16"></i>
-                            <span class="ml-3 item-text">Dashboard</span><span class="sr-only">(current)</span>
-                        </a>
-                        @include('menu-dashboard')
+                        @if (auth()->user()->tipo == 'Gerente')
+                            <a href="/dashboard" class="nav-link">
+                                <i class="fe fe-home fe-16"></i>
+                                <span class="ml-3 item-text">Dashboard</span><span></span>
+                            </a>
+                        @else
+                            <a href="/dashboard" class="nav-link">
+                                <i class="fe fe-home fe-16"></i>
+                                <span class="ml-3 item-text">Inicio</span><span></span>
+                            </a>
+                        @endif
+                        <!-- @include('menu-dashboard') -->
                     </li>
                 </ul>
                 <p class="text-muted nav-heading mt-4 mb-1">
-                    <span>Components</span>
+                    <span>¿Qué es lo que necesitas?</span>
                 </p>
                 <ul class="navbar-nav flex-fill w-100 mb-2">
-                    <li class="nav-item dropdown">
+                    @if (auth()->user()->tipo == 'Gerente')
+                        <li class="nav-item dropdown">
+                        
                         <a href="{{ route('abogado.index') }}" class="nav-link">
                             <i class="fe fe-16 fe-users"></i>
                             <span class="ml-3 item-text">Abogados</span>
                             
                         </a>
+                        <li class="nav-item dropdown">
+                            <a href="{{ route('servicios') }}" class="nav-link">
+                                <i class="fe fe-16 fe-archive"></i>
+                                <span class="ml-3 item-text">Servicios</span>
+                                
+                            </a>
+                        </li>
+                        @else
+                            <li class="nav-item dropdown">
+                    
+                            <a href="{{ route('servicios') }}" class="nav-link">
+                                <i class="fe fe-16 fe-archive"></i>
+                                <span class="ml-3 item-text">Servicios</span>
+                                
+                            </a>
+                            </li>
+
+                            <li>
+                                <a href="{{ route('duda') }}" class="nav-link">
+                                    <i class="fe fe-16 fe-archive"></i>
+                                    <span class="ml-3 item-text">¿Necesitas ayuda?</span>
+                                    
+                                </a>
+                            </li>
+                        @endif
                         <!-- <ul class="collapse list-unstyled pl-4 w-100" id="ui-elements">
                             <li class="nav-item">
                                 <a class="nav-link pl-3" href="./ui-color.html"><span class="ml-1 item-text">Colors</span>
@@ -151,13 +186,9 @@
                             </li>
                         </ul> -->
                     </li>
-                    <li class="nav-item dropdown">
-                        <a href="{{ route('servicios') }}" class="nav-link">
-                            <i class="fe fe-16 fe-archive"></i>
-                            <span class="ml-3 item-text">Servicios</span>
-                            
-                        </a>
-                    </li>
+                    
+
+
                 </ul>
                 <!-- <p class="text-muted nav-heading mt-4 mb-1">
                     <span>Apps</span>
@@ -300,6 +331,7 @@
                     </li>
                 </ul> -->
             </nav>
+            @endauth
         </aside>
         <main role="main" class="main-content">
             <div class="container-fluid">

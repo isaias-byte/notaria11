@@ -250,7 +250,7 @@
                                         <!-- <span class="sub-title mb-2 d-block">Acquaint Us</span> -->
                                         <h2 class="title text-danger mb-3">Sobre nosotros</h2>
                                         <p>
-                                            Somos una Notaría representada por el Licenciado Felipe Torres Pacheco, Notario Público Número 11 del Municipio de Guadalajara, Jalisco y el Licenciado Diego Torres Soule, Notario Público Número 108 y Corredor Número 70 del Municipio de Guadalajara, Jalisco, y Notarios del Patrimonio Inmueble Federal.<br>Actualmente está formada por un equipo de profesionales, entre ellos:
+                                            Somos una Notaría representada por el Licenciado Felipe Torres Pacheco, Notario Público Número 11 del Municipio de Guadalajara, Jalisco y el Maestro Torres Soule, Notario Público Número 108 y Corredor Número 70 del Municipio de Guadalajara, Jalisco, y Notarios del Patrimonio Inmueble Federal.<br>Actualmente está formada por un equipo de profesionales, entre ellos:
                                         </p>
                                         <div class="d-flex">
                                             <ul class="mr-5">
@@ -275,7 +275,7 @@
 
                             <div class="row mb-5">
                                 <div class="col-lg-6 order-1 order-lg-2 mb-4 mb-lg-0">
-                                    <img src="{{ asset('assets/images/jefe-notaria.jpg') }}" alt="LICENCIADO FELIPE TORRES PACHECO" class="img-fluid">
+                                    <img src="{{ asset('assets/images/jefe-notaria.png') }}" alt="LICENCIADO FELIPE TORRES PACHECO" class="img-fluid">
                                 </div>
                                 <div class="col-lg-5 h-100 jm-sticky-top mr-auto order-2 order-lg-1">
                                     <ul>
@@ -304,7 +304,7 @@
                                     </div>
                                     <div class="row no-gutters">
                                         <div class="col-lg-6 mb-5 person">
-                                            <img src="{{ asset('assets/images/jefe-notaria.jpg') }}" alt="Licenciado Felipe Torres Pacheco" class="img-fluid mb-5">
+                                            <img src="{{ asset('assets/images/jefe-notaria.png') }}" alt="Licenciado Felipe Torres Pacheco" class="img-fluid mb-5">
 
                                             <div class="row">
                                                 <div class="col-lg-10 ml-auto">
@@ -326,11 +326,11 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-6 person">
-                                            <img src="{{ asset('assets/images/miembro-firma-mariam.jpg') }}" alt="Licenciado Diego Torres Soulé" class="img-fluid mb-5">
+                                            <img src="{{ asset('assets/images/miembro-firma.png') }}" alt="Maestro Diego Torres Soulé" class="img-fluid mb-5">
                                             <div class="row">
                                                 <div class="col-lg-10 ml-auto">
                                                     <div class="pr-lg-5">
-                                                        <h3>Licenciado Diego Torres Soulé</h3>
+                                                        <h3>Maestro Diego Torres Soulé</h3>
                                                         <!-- <span class="mb-4 d-block">CTO, Co-Founder</span>
                                                         <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
                                                         <p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.</p>
