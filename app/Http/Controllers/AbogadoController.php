@@ -164,7 +164,7 @@ class AbogadoController extends Controller
         $path_destino = 'public/fotografias';
         $mime = $request->archivo->getClientMimeType();
         $nombreOriginal = $request->archivo->getClientOriginalName();
-        $ruta = $request->archivo->move($path_destino, $nombreOriginal);
+        $ruta = $request->archivo->storeAs($path_destino, $nombreOriginal);
         
 
             //* Alteramos a propósito un poco el request, dando la oportunidad que sean vaciós los campos de apellido materno, y los teléfonos, además, asignamos el valor a user_id (foreign key)
