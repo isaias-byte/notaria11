@@ -48,6 +48,7 @@ Route::post('abogado/{abogado}/servicios', [AbogadoController::class, 'agregarSe
 
 Route::get('cliente/duda', [AbogadoController::class, 'dudaCliente'])->name('duda');
 Route::get('cliente/duda/enviar-correo', [AbogadoController::class, 'enviarDuda'])->name('duda-correo');
+Route::get('cliente/abogados', [AbogadoController::class, 'clienteAbogados'])->name('cliente-abogados');
 
 Route::resource('abogado', AbogadoController::class)->middleware('verified');
 

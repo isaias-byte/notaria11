@@ -70,9 +70,17 @@
                 </li> -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-muted pr-0" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    @auth
+                    @if (auth()->user()->tipo == 'Gerente')
                         <span class="avatar avatar-sm mt-2">
-                            <img src="./assets/avatars/face-1.jpg" alt="..." class="avatar-img rounded-circle">
+                            <img src="{{ asset('assets/images/admin-icon.png') }}" alt="..." class="avatar-img rounded-circle">
                         </span>
+                    @else
+                        <span class="avatar avatar-sm mt-2">
+                            <img src="{{ asset('assets/images/cliente-icon.png') }}" alt="Cliente" class="avatar-img rounded-circle">
+                        </span>
+                    @endif
+                    @endauth
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                         <form method="POST" action="{{ route('logout') }}">
@@ -126,13 +134,13 @@
                 </p>
                 <ul class="navbar-nav flex-fill w-100 mb-2">
                     @if (auth()->user()->tipo == 'Gerente')
-                        <li class="nav-item dropdown">
-                        
-                        <a href="{{ route('abogado.index') }}" class="nav-link">
-                            <i class="fe fe-16 fe-users"></i>
-                            <span class="ml-3 item-text">Abogados</span>
-                            
-                        </a>
+                        <li class="nav-item dropdown">                        
+                            <a href="{{ route('abogado.index') }}" class="nav-link">
+                                <i class="fe fe-16 fe-users"></i>
+                                <span class="ml-3 item-text">Abogados</span>
+                                
+                            </a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a href="{{ route('servicios') }}" class="nav-link">
                                 <i class="fe fe-16 fe-archive"></i>
@@ -140,24 +148,32 @@
                                 
                             </a>
                         </li>
-                        @else
-                            <li class="nav-item dropdown">
-                    
+                    @else
+                        <li class="nav-item dropdown">
+                
                             <a href="{{ route('servicios') }}" class="nav-link">
                                 <i class="fe fe-16 fe-archive"></i>
                                 <span class="ml-3 item-text">Servicios</span>
                                 
                             </a>
-                            </li>
+                        </li>
 
-                            <li>
-                                <a href="{{ route('duda') }}" class="nav-link">
-                                    <i class="fe fe-16 fe-archive"></i>
-                                    <span class="ml-3 item-text">¿Necesitas ayuda?</span>
-                                    
-                                </a>
-                            </li>
-                        @endif
+                        <li>
+                            <a href="{{ route('duda') }}" class="nav-link">
+                                <i class="fe fe-16 fe-help-circle"></i>
+                                <span class="ml-3 item-text">¿Necesitas ayuda?</span>
+                                
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">                        
+                            <a href="{{ route('cliente-abogados') }}" class="nav-link">
+                                <i class="fe fe-16 fe-users"></i>
+                                <span class="ml-3 item-text">Abogados</span>
+                                
+                            </a>
+                        </li>
+                            
+                    @endif
                         <!-- <ul class="collapse list-unstyled pl-4 w-100" id="ui-elements">
                             <li class="nav-item">
                                 <a class="nav-link pl-3" href="./ui-color.html"><span class="ml-1 item-text">Colors</span>

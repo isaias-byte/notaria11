@@ -225,4 +225,10 @@ class AbogadoController extends Controller
         Mail::to('cliente@test.com')->send(new ClienteDuda);
         return redirect()->back();
     }
+
+    public function clienteAbogados() {
+        $abogados = Abogado::with('servicios')->get();
+
+        return view('cliente.cliente-abogados', compact('abogados'));
+    }
 }
