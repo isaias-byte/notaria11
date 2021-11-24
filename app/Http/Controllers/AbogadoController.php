@@ -86,7 +86,7 @@ class AbogadoController extends Controller
         //* Guardamos en la base de datos y retornamos al index
         Abogado::create($request->all());
         
-        return redirect()->route('abogado.index');
+        return redirect()->route('abogado.index')->with('info','Abogado agregado exitosamente.');
 
     }
 
@@ -178,7 +178,7 @@ class AbogadoController extends Controller
     {
         //* Con el método delete eliminamos de la base de datos el registro
         $abogado->delete();
-        return redirect()->route('abogado.index');
+        return redirect()->route('abogado.index')->with('delete','Abogado eliminado exitosamente.');
     }
 
     //* Añadimos una función específica para la relación de muchos a muchos

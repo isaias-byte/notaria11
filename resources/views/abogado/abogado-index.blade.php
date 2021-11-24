@@ -4,6 +4,16 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-12">
+        @if(session('info'))
+            <div class="alert alert-success" role="alert">
+                {{session('info')}}
+            </div>
+        @endif
+        @if(session('delete'))
+            <div class="alert alert-success" role="alert">
+                {{session('delete')}}
+            </div>
+        @endif
             <h1 class="page-title">Abogados de la Notaría 11</h1>
             <a href="{{ route('abogado.create') }}" class="row align-items-center">
                 <div class="col-auto">
