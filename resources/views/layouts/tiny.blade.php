@@ -134,6 +134,7 @@
                 </p>
                 <ul class="navbar-nav flex-fill w-100 mb-2">
                     @if (auth()->user()->tipo == 'Gerente')
+                        
                         <li class="nav-item dropdown">                        
                             <a href="{{ route('abogado.index') }}" class="nav-link">
                                 <i class="fe fe-16 fe-users"></i>

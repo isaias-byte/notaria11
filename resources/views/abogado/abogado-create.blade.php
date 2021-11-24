@@ -1,5 +1,7 @@
 @extends('layouts.tiny')
 @section('contenido')
+@can('create', App\Models\Abogado::class)
+    
 
 @if (isset($abogado))
 <h1 class="page-title">Editar abogado</h1>
@@ -89,4 +91,7 @@
             </span>
         </button>
     </form>
-    @endsection
+    @elsecan('create', App\Models\Abogado::class)
+        <h1>Página NO autorizada</h1>
+    @endcan
+@endsection

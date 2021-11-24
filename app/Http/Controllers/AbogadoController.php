@@ -27,12 +27,17 @@ class AbogadoController extends Controller
      */
     public function index()
     {
-        //* obtenemos todos los abogados, y los pasamos a la vista index
-        // $abogados = Abogado::all();
-        $abogados = Abogado::with('servicios')->get();
-        //! Tenemos la relación de uno a muchos (user(1)->abogados(n)) trabajando correctamente, con la siguiente línea obtenemos los abogados solamente del usuario que está registrado, no obstante, en nuestro caso siempre mostramos todos los abogados de la notaría que están en la BD
-        // $abogados = Auth::user()->abogados()->get();
-        return view('abogado.abogado-index', compact('abogados'));
+        if (Auth::user()->tipo == 'Gerente') {
+            //* obtenemos todos los abogados, y los pasamos a la vista index
+            // $abogados = Abogado::all();
+            $abogados = Abogado::with('servicios')->get();
+            //! Tenemos la relación de uno a muchos (user(1)->abogados(n)) trabajando correctamente, con la siguiente línea obtenemos los abogados solamente del usuario que está registrado, no obstante, en nuestro caso siempre mostramos todos los abogados de la notaría que están en la BD
+            // $abogados = Auth::user()->abogados()->get();
+            return view('abogado.abogado-index', compact('abogados'));
+        }
+        else {
+            abort(403);
+        }
     }
 
     /**
@@ -42,6 +47,9 @@ class AbogadoController extends Controller
      */
     public function create()
     {
+        if (Auth::user()->tipo != 'Gerente') {
+            abort(403);
+        }
         return view('abogado.abogado-create');
     }
 
@@ -67,7 +75,7 @@ class AbogadoController extends Controller
             'codigo' => ['required', 'string', 'min:2', 'max:50', 'unique:App\Models\Abogado,codigo'],
         ]);
 
-        $path_destino = 'storage/fotografias';
+        $path_destino = 'public/fotografias';
         $mime = $request->archivo->getClientMimeType();
         $nombreOriginal = $request->archivo->getClientOriginalName();
         $ruta = $request->archivo->storeAs($path_destino, $nombreOriginal);
@@ -98,6 +106,10 @@ class AbogadoController extends Controller
      */
     public function show(Abogado $abogado)
     {
+        if (Auth::user()->tipo != 'Gerente') {
+            abort(403);
+        }
+
         $servicios = Servicio::get();
         return view('abogado.abogado-show', compact('abogado', 'servicios'));
     }
@@ -110,6 +122,9 @@ class AbogadoController extends Controller
      */
     public function edit(Abogado $abogado)
     {
+        if (Auth::user()->tipo != 'Gerente') {
+            abort(403);
+        }
         return view('abogado.abogado-create', compact('abogado'));
     }
 
@@ -146,7 +161,7 @@ class AbogadoController extends Controller
         //     $mime = $request->archivo->getClientMimeType();
         //     $nombreOriginal = $request->archivo->getClientOriginalName();
         //     $ruta = $request->archivo->storeAs($path_destino, $nombreOriginal);
-        $path_destino = 'storage/fotografias';
+        $path_destino = 'public/fotografias';
         $mime = $request->archivo->getClientMimeType();
         $nombreOriginal = $request->archivo->getClientOriginalName();
         $ruta = $request->archivo->move($path_destino, $nombreOriginal);
@@ -176,6 +191,9 @@ class AbogadoController extends Controller
      */
     public function destroy(Abogado $abogado)
     {
+        if (Auth::user()->tipo != 'Gerente') {
+            abort(403);
+        }
         //* Con el método delete eliminamos de la base de datos el registro
         $abogado->delete();
         return redirect()->route('abogado.index')->with('delete','Abogado eliminado exitosamente.');

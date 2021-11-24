@@ -1,6 +1,8 @@
+
+    
 @extends('layouts.tiny')
 @section('contenido')
-
+@can('viewAny', App\Models\Abogado::class)
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-12">
@@ -153,7 +155,9 @@
         </div>
         @endif
     </div>
-    
+    @elsecan('viewAny', App\Models\Abogado::class)
+        <p>Página No autorizada</p>
+    @endcan
 
 </div>
 @endsection
