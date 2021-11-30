@@ -48,6 +48,8 @@ Algunos comandos que pueden ser de utilidad en caso de que no carguen por comple
 
 ## Autores
 - Isaías Juárez
-- Alan Eduardo Gonzalez  
+- Alan Eduardo Gonzalez
+- Mariam de Jesús Delgado
+- Álvaro Alexis Muñoz
 
 *Derechos reservados.*
